@@ -8,6 +8,7 @@ import io.wispforest.owo.ui.container.Containers;
 import io.wispforest.owo.ui.container.FlowLayout;
 import io.wispforest.owo.ui.core.*;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
@@ -35,6 +36,8 @@ public class ExampleScreen extends BaseOwoScreen<FlowLayout> {
                                 .allowMouseRotation(true)
                                 .sizing(Sizing.fixed(50), Sizing.fixed(69))
                 )
+                .child(Components.button(Text.of("Back"), b -> close())
+                        .positioning(Positioning.absolute(10, 10)))
                 .surface(Surface.VANILLA_TRANSLUCENT)
                 .horizontalAlignment(HorizontalAlignment.CENTER)
                 .verticalAlignment(VerticalAlignment.CENTER);
